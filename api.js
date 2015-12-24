@@ -93,7 +93,6 @@ Papertrail.prototype = {
   */
   searchEvents: decorateRequest(function(options) {
     options = options || {};
-    if (options.q) options.q = encodeURI(options.q);
 
     return request.get(this.baseUrl + 'events/search').
             query(options);
